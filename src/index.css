@@ -4,6 +4,10 @@
 
 /* 전역 기본 스타일, HTML 태그 스타일링 */
 @layer base {
+    html {
+        @apply font-sans;
+    }
+
     *,
     ::before,
     ::after {
