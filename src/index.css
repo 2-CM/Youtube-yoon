@@ -55,8 +55,19 @@
     .search-btn {
         @apply flex items-center justify-center cursor-pointer h-10 w-16 bg-[#f8f8f8] border border-[#d3d3d3] rounded-[0_40px_40px_0] hover:bg-[#f0f0f0] hover:border-[#c6c6c6];
     }
+
+    .voice-search-tooltip {
+        @apply absolute bg-[#616161] text-white p-2 m-2 rounded text-[12px] top-[48px] left-[-27px] whitespace-nowrap fade-in group-hover:fade-in-show;
+    }
 }
 
 /* 특수한 유틸리티 클래스 정의 */
 @layer utilities {
+    .fade-in {
+        @apply opacity-0 transition-opacity duration-300 ease-in-out;
+    }
+
+    .fade-in-show {
+        @apply opacity-90;
+    }
 }
