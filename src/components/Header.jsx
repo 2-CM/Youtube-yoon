@@ -12,17 +12,17 @@ const Header = () => {
 
                 <div className="flex items-center basis-[732px] shrink grow-0">
                     <div className="flex items-center flex-1 ml-10 h-10">
-                        <div className="input-box">
+                        <div className="search-input-container">
                             <form action="/" className="flex flex-1 h-6">
                                 <input type="text" className="search-input w-full" placeholder="검색" />
                             </form>
 
-                            <button className="text-input-assistant-btn p-1">
+                            <button className="text-input-assistant-button p-1">
                                 <img src={textInputAssistantImg} alt="텍스트 입력 보조 키보드" />
                             </button>
                         </div>
 
-                        <button className="search-btn" type="submit" title="검색" aria-label="검색 버튼">
+                        <button className="search-button" type="submit" title="검색" aria-label="검색 버튼">
                             <div className="flex w-6 h-6">
                                 <img className="w-full h-full" src={searchIcon} alt="돋보기 아이콘" />
                             </div>
@@ -36,11 +36,13 @@ const Header = () => {
                             </div>
                         </button>
 
-                        <div className="voice-search-tooltip">음성으로 검색</div>
+                        <div className="tooltip-voice-search">음성으로 검색</div>
                     </div>
                 </div>
 
-                <div>사용자탭</div>
+                <div>
+                    <div></div>
+                </div>
             </div>
         </header>
     );
