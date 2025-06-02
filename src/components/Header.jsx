@@ -6,15 +6,22 @@ const Header = () => {
     return (
         <header>
             <div className="px-4 py-0 flex items-center justify-between">
-                <a href="#" className="logo-padding">
+                <a href="#" className="logo-padding p-">
                     <img src="/yt-logo.svg" alt="로고"></img>
                 </a>
 
-                <div className="flex items-center basis-[732px] shrink grow-0">
-                    <div className="flex items-center flex-1 ml-10 h-10">
-                        <div className="search-input-container">
+                <div className="relative flex items-center basis-[732px] shrink grow-0">
+                    <div className="flex items-center flex-1 ml-10 h-10 focus-within:ml-0">
+                        <div className="search-input-container focus-within:border-r focus-within:border-[#1c62b9] focus-within:pl-14 focus-within:shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)]">
                             <form action="/" className="flex flex-1 h-6">
-                                <input type="text" className="search-input w-full" placeholder="검색" />
+                                <input
+                                    type="text"
+                                    className="search-input w-full peer outline-none"
+                                    placeholder="검색"
+                                />
+                                <div className="absolute h-5 w-5 left-5 top-1/2 -translate-y-1/2 hidden peer-focus:block">
+                                    <img className="w-full h-full" src={searchIcon} alt="검색 아이콘" />
+                                </div>
                             </form>
 
                             <button className="text-input-assistant-button p-1">
@@ -24,12 +31,12 @@ const Header = () => {
 
                         <button className="search-button" type="submit" title="검색" aria-label="검색 버튼">
                             <div className="flex w-6 h-6">
-                                <img className="w-full h-full" src={searchIcon} alt="돋보기 아이콘" />
+                                <img className="w-full h-full" src={searchIcon} alt="검색 아이콘" />
                             </div>
                         </button>
                     </div>
 
-                    <div className="rounded-[100px] ml-3 bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] relative group">
+                    <div className="rounded-full ml-3 bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] relative group">
                         <button className="w-10 h-10 flex items-center justify-center relative">
                             <div>
                                 <img className="w-full h-full" src={voiceSearchIcon} alt="음성 검색 아이콘" />
