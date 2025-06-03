@@ -10,7 +10,7 @@ const Header = () => {
         <header>
             <div className="px-4 py-0 flex items-center justify-between">
                 <a href="#" className="logo-padding p-">
-                    <img src="/yt-logo.svg" alt="로고"></img>
+                    <img src="/yt-logo.svg" draggable="false" alt="로고"></img>
                 </a>
 
                 <div className="relative flex items-center basis-[732px] shrink grow-0">
@@ -28,13 +28,13 @@ const Header = () => {
                             </form>
 
                             <button className="text-input-assistant-button p-1">
-                                <img src={textInputAssistantImg} alt="텍스트 입력 보조 키보드" />
+                                <img src={textInputAssistantImg} draggable="false" alt="텍스트 입력 보조 키보드" />
                             </button>
                         </div>
 
                         <button className="search-button" type="submit" title="검색" aria-label="검색 버튼">
                             <div className="flex w-6 h-6">
-                                <img className="w-full h-full" src={searchIcon} alt="검색 아이콘" />
+                                <img className="w-full h-full" draggable="false" src={searchIcon} alt="검색 아이콘" />
                             </div>
                         </button>
                     </div>
@@ -42,7 +42,12 @@ const Header = () => {
                     <div className="rounded-full ml-3 bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] relative group">
                         <button className="w-10 h-10 flex items-center justify-center relative">
                             <div>
-                                <img className="w-full h-full" src={voiceSearchIcon} alt="음성 검색 아이콘" />
+                                <img
+                                    className="w-full h-full"
+                                    draggable="false"
+                                    src={voiceSearchIcon}
+                                    alt="음성 검색 아이콘"
+                                />
                             </div>
                         </button>
 
@@ -52,7 +57,7 @@ const Header = () => {
 
                 <div className="flex items-center">
                     <button className="flex items-center mr-2 p-2 rounded-3xl bg-gray-100 hover:bg-[rgba(0,0,0,0.15)]">
-                        <img className="w-full h-full" src={moonIcon} alt="" />
+                        <img className="w-full h-full" draggable="false" src={moonIcon} alt="" />
                     </button>
 
                     <div className="flex px-1">
