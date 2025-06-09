@@ -14,7 +14,7 @@ const ThemeToggleButton = () => {
     return (
         <button
             onClick={handleToggle}
-            className={`w-14 h-8 flex items-center p-1 border border-white rounded-full transition-colors duration-300 ${
+            className={`w-14 h-8 flex items-center p-1 mr-2 border border-white rounded-full transition-colors duration-300 ${
                 theme === 'dark' ? 'bg-gray-800' : 'bg-gray-300'
             }`}
         >
