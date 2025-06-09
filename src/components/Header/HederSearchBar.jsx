@@ -6,7 +6,7 @@ const HeaderSearchBar = () => {
     return (
         <div className="relative flex items-center basis-[732px] shrink grow-0">
             <div className="flex items-center flex-1 ml-10 h-10 focus-within:ml-0">
-                <div className="search-input-container focus-within:border-r focus-within:border-[#1c62b9] focus-within:pl-14 focus-within:shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)]">
+                <div className="search-input-container">
                     <form action="/" className="flex flex-1 h-6">
                         <input type="text" className="search-input w-full peer outline-none" placeholder="검색" />
                         <div className="absolute h-5 w-5 left-5 top-1/2 -translate-y-1/2 hidden peer-focus:block">
