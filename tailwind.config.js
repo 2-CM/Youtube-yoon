@@ -2,10 +2,14 @@
 export default {
     content: [
         './index.html',
-        './src/**/*.{js,ts,jsx,tsx}', // Vite + React에 맞게 설정
+        './src/**/*.{js,jsx}', // Vite + React에 맞게 설정
     ],
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ['Roboto', 'Arial', 'sans-serif'],
+            },
+        },
     },
     plugins: [],
 };
