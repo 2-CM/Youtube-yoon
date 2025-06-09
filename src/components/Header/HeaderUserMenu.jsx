@@ -9,7 +9,7 @@ const HeaderUserMenu = () => {
             <ThemeToggleButton />
 
             <div className="flex px-1">
-                <button className="mx-2 w-8 h-8 rounded-full overflow-hidden">
+                <button className="mx-2 w-8 h-8 rounded-full overflow-hidden focus:shadow-[0_0_0_1px_#1c62b9]">
                     <img
                         className="w-full h-full object-cover"
                         draggable="false"
