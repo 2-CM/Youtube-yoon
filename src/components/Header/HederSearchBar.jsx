@@ -5,8 +5,8 @@ import voiceSearchIcon from '../../assets/voice-search-icon.svg';
 const HeaderSearchBar = () => {
     return (
         <div className="relative flex items-center basis-[732px] shrink grow-0">
-            <div className="flex items-center flex-1 ml-10 h-10 focus-within:ml-0">
-                <div className="search-input-container">
+            <div className="flex items-center flex-1 h-10">
+                <div className="search-input-container ml-10 focus-within:ml-0">
                     <form action="/" className="flex flex-1 h-6">
                         <input type="text" className="search-input w-full peer outline-none" placeholder="검색" />
                         <div className="absolute h-5 w-5 left-5 top-1/2 -translate-y-1/2 hidden peer-focus:block">
