@@ -1,4 +1,4 @@
-import searchIcon from '../../assets/search-icon.svg';
+import { Search } from 'lucide-react';
 import textInputAssistantImg from '../../assets/text-input-assistant.png';
 import voiceSearchIcon from '../../assets/voice-search-icon.svg';
 
@@ -9,8 +9,8 @@ const HeaderSearchBar = () => {
                 <div className="search-input-container ml-10 focus-within:ml-0">
                     <form action="/" className="flex flex-1 h-6">
                         <input type="text" className="search-input w-full peer outline-none" placeholder="검색" />
-                        <div className="absolute h-5 w-5 left-5 top-1/2 -translate-y-1/2 hidden peer-focus:block">
-                            <img className="w-full h-full" src={searchIcon} alt="검색 아이콘" />
+                        <div className="absolute left-5 top-1/2 -translate-y-1/2 hidden peer-focus:block">
+                            <Search className="h-5 w-5" strokeWidth={1} alt="검색 아이콘" />
                         </div>
                     </form>
 
@@ -21,7 +21,7 @@ const HeaderSearchBar = () => {
 
                 <button className="search-button" type="submit" title="검색" aria-label="검색 버튼">
                     <div className="flex w-6 h-6">
-                        <img className="w-full h-full" draggable="false" src={searchIcon} alt="검색 아이콘" />
+                        <Search strokeWidth={1} alt="검색 아이콘" />
                     </div>
                 </button>
             </div>

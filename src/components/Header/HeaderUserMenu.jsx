@@ -1,6 +1,4 @@
 import ThemeToggleButton from './ThemeToggleButton';
-import moonIcon from '../../assets/moon-icon.svg';
-import sunIcon from '../../assets/sun-icon.svg';
 import userProfile from '../../assets/user-profile.jpg';
 
 const HeaderUserMenu = () => {
