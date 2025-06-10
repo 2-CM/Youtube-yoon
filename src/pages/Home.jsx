@@ -1,5 +1,5 @@
 import Header from '../components/Header/Header';
-import Sidebar from '../components/Sidebar';
+import SideBar from '../components/SideBar/SideBar';
 import VideoCard from '../components/VideoCard';
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
         <>
             <Header />
             <div style={{ display: 'flex' }}>
-                <Sidebar />
+                <SideBar />
                 <VideoCard />
             </div>
         </>

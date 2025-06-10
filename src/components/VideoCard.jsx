@@ -1,9 +1,5 @@
 const VideoCard = () => {
-    return (
-        <div>
-            <h1 className="h1">VideoCard</h1>
-        </div>
-    );
+    return <div></div>;
 };
 
 export default VideoCard;
