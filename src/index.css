@@ -68,6 +68,10 @@
         @apply flex flex-col items-center justify-center pt-4 pb-[14px] w-16;
     }
 
+    .sidebar-item-container {
+        @apply hover:bg-[rgba(0,0,0,0.05)] rounded-lg active:bg-[rgba(0,0,0,0.1)];
+    }
+
     .sidebar-text {
         @apply text-[10px] font-normal overflow-ellipsis whitespace-nowrap mt-1;
     }
