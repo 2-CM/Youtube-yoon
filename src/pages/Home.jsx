@@ -1,5 +1,5 @@
 import Header from '../components/Header/Header';
-import SideBar from '../components/Sidebar';
+import SideBar from '../components/SideBar/SideBar';
 import VideoCard from '../components/VideoCard';
 
 const Home = () => {
