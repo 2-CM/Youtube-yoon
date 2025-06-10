@@ -1,6 +1,6 @@
 import Header from '../components/Header/Header';
 import SideBar from '../components/SideBar/SideBar';
-import VideoCard from '../components/VideoCard';
+import VideoGrid from '../components/VideoGrid/VideoGrid';
 
 const Home = () => {
     return (
@@ -8,7 +8,7 @@ const Home = () => {
             <Header />
             <div style={{ display: 'flex' }}>
                 <SideBar />
-                <VideoCard />
+                <VideoGrid />
             </div>
         </>
     );
