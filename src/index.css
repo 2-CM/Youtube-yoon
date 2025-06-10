@@ -63,6 +63,14 @@
     .tooltip-voice-search {
         @apply absolute bg-[#616161] text-white p-2 m-2 rounded text-[12px] top-[48px] left-[-27px] whitespace-nowrap fade-in group-hover:fade-in-show;
     }
+
+    .sidebar-item {
+        @apply flex flex-col items-center justify-center pt-4 pb-[14px] w-16;
+    }
+
+    .sidebar-text {
+        @apply text-[10px] font-normal overflow-ellipsis whitespace-nowrap mt-1;
+    }
 }
 
 /* 특수한 유틸리티 클래스 정의 */
