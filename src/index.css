@@ -75,6 +75,14 @@
     .sidebar-text {
         @apply text-[10px] font-normal overflow-ellipsis whitespace-nowrap mt-1;
     }
+
+    .videocard-click-bg {
+        @apply absolute inset-0 rounded-md opacity-0 group-active/click:opacity-10 bg-black transition-opacity duration-300 ease-out;
+    }
+
+    /* .videocard-click-border {
+        @apply absolute inset-0 rounded-md opacity-0 group-active/click:opacity-20 border border-black transition-opacity duration-300 delay-100 ease-in;
+    } */
 }
 
 /* 특수한 유틸리티 클래스 정의 */
