@@ -61,7 +61,7 @@
     }
 
     .tooltip {
-        @apply absolute bg-[#616161] text-white p-2 rounded text-xs whitespace-nowrap tooltip-fade;
+        @apply absolute bg-[#616161] text-white p-2 rounded text-xs whitespace-nowrap tooltip-fade pointer-events-none;
     }
 
     .sidebar-item {
