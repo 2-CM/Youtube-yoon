@@ -16,7 +16,7 @@ const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
                     </div>
                 </div>
 
-                <div className="flex">
+                <div className="relative flex">
                     <div className="mt-3 mr-3 overflow-hidden rounded-full w-9 h-9 flex-shrink-0">
                         <a href={`/@${username}`}>
                             <img
@@ -33,8 +33,9 @@ const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
                             <div className="mt-3 mb-1 text-base font-medium line-clamp-2">{title}</div>
                         </a>
 
-                        <div className="text-sm font-normal text-[#606060]">
+                        <div className="group text-sm font-normal text-[#606060]">
                             <div className="hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
+                            <div className="tooltip left-13 top-1">{username}</div>
                             <span>{`${views} • ${uploadedAt}`}</span>
                         </div>
                     </div>

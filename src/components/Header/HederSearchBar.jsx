@@ -33,7 +33,7 @@ const HeaderSearchBar = () => {
                     </div>
                 </button>
 
-                <div className="tooltip-voice-search">음성으로 검색</div>
+                <div className="tooltip top-[48px] left-[-27px] m-2">음성으로 검색</div>
             </div>
         </div>
     );
