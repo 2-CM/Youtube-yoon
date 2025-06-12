@@ -2,10 +2,15 @@ import VideoThumnail from '../../assets/video_thumbnail.avif';
 
 const VideoCard = () => {
     return (
-        <div className="h-full bg-gray-200">
+        <div className="h-full bg-gray-200 relative">
             <div className="">
                 <div className="h-full overflow-hidden rounded-xl">
-                    <img className="w-full h-full object-cover" src={VideoThumnail} alt="영상 썸네일 사진" />
+                    <img
+                        className="w-full h-full object-cover "
+                        src={VideoThumnail}
+                        draggable="false"
+                        alt="영상 썸네일 사진"
+                    />
                 </div>
             </div>
             <div className="flex">
@@ -16,6 +21,8 @@ const VideoCard = () => {
                     <div>조회수</div>
                 </div>
             </div>
+
+            <a className="absolute top-0 w-full h-full" href="/"></a>
         </div>
     );
 };
