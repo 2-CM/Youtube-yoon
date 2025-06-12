@@ -1,9 +1,9 @@
 import UserProfile from '../../assets/user-profile.jpg';
 import VideoThumnail from '../../assets/video_thumbnail.avif';
 
-const VideoCard = () => {
+const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
     return (
-        <a href="/video">
+        <a href={`/video/${videoId}`}>
             <div className="relative">
                 <div className="">
                     <div className="h-full overflow-hidden rounded-xl">
@@ -15,9 +15,10 @@ const VideoCard = () => {
                         />
                     </div>
                 </div>
+
                 <div className="flex">
                     <div className="mt-3 mr-3 overflow-hidden rounded-full w-9 h-9 flex-shrink-0">
-                        <a href="/user">
+                        <a href={`/@${username}`}>
                             <img
                                 className="w-full h-full object-cover"
                                 src={UserProfile}
@@ -26,17 +27,15 @@ const VideoCard = () => {
                             />
                         </a>
                     </div>
+
                     <div className="pr-6">
-                        <a href="/video">
-                            <div className="mt-3 mb-1 text-base font-medium line-clamp-2">
-                                흘러가는대로 살고싶은 브금 흘러가는대로 살고싶은 브금 흘러가는대로 살고싶은 브금
-                                흘러가는대로 살고싶은 브금 흘러가는대로 살고싶은 브금
-                            </div>
+                        <a href={`/video/${videoId}`}>
+                            <div className="mt-3 mb-1 text-base font-medium line-clamp-2">{title}</div>
                         </a>
-                        <div className="text-sm  font-normal text-[#606060]">
-                            <div className="hover:text-[#0f0f0f] line-clamp-2 break-all">동숲거주자</div>
-                            <span>조회수 10만회</span>
-                            <span className="before:content-['•'] before:mx-1">6개월 전</span>
+
+                        <div className="text-sm font-normal text-[#606060]">
+                            <div className="hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
+                            <span>{`${views} • ${uploadedAt}`}</span>
                         </div>
                     </div>
                 </div>
