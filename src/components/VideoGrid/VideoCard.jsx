@@ -15,7 +15,7 @@ const VideoCard = () => {
                 </div>
             </div>
             <div className="flex">
-                <div className="mt-3 mr-3 overflow-hidden rounded-full w-9 h-9">
+                <div className="mt-3 mr-3 overflow-hidden rounded-full w-9 h-9 flex-shrink-0">
                     <a href="/">
                         <img className="w-full h-full object-cover" src={UserProfile} alt="채널 프로필 사진" />
                     </a>
