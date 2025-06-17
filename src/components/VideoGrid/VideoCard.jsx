@@ -1,3 +1,4 @@
+import { EllipsisVertical } from 'lucide-react';
 import UserProfile from '../../assets/user-profile.jpg';
 import VideoThumnail from '../../assets/video_thumbnail.avif';
 
@@ -35,15 +36,25 @@ const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
                 </div>
 
                 {/* 텍스트 영역 */}
-                <div className="pr-6">
-                    <div className="mt-3 mb-1 text-base font-medium line-clamp-2">{title}</div>
+                <div className="pr-10">
+                    <div className="mt-3 mb-1 text-base font-medium line-clamp-2 break-all">{title}</div>
 
                     <a className="inline-flex group videocard-content-text" href={`/@${username}`}>
-                        <div className="flex hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
-                        <div className="tooltip left-13 top-1">{username}</div>
+                        <div className="hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
+                        <div className="tooltip left-13 top-1 z-10">{username}</div>
                     </a>
                     <div className="videocard-content-text">{`조회수 ${views} • ${uploadedAt}`}</div>
                 </div>
+
+                <button
+                    className="absolute right-0 top-1 w-10 h-10 flex items-center justify-center active:bg-[rgba(0,0,0,0.1)] rounded-full"
+                    type="button"
+                    onClick={(e) => {
+                        e.stopPropagation(); // handleCardClick 동작 막기
+                    }}
+                >
+                    <EllipsisVertical size={20} alt="더보기" />
+                </button>
             </div>
 
             {/* 클릭 효과 */}
