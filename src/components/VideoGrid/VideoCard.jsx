@@ -38,13 +38,11 @@ const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
                 <div className="pr-6">
                     <div className="mt-3 mb-1 text-base font-medium line-clamp-2">{title}</div>
 
-                    <div className="text-sm font-normal text-[#606060]">
-                        <a className="group" href={`/@${username}`}>
-                            <div className="hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
-                            <div className="tooltip left-13 top-1 ">{username}</div>
-                        </a>
-                        <span>{`${views} • ${uploadedAt}`}</span>
-                    </div>
+                    <a className="inline-flex group videocard-content-text" href={`/@${username}`}>
+                        <div className="flex hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
+                        <div className="tooltip left-13 top-1">{username}</div>
+                    </a>
+                    <div className="videocard-content-text">{`조회수 ${views} • ${uploadedAt}`}</div>
                 </div>
             </div>
 

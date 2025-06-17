@@ -76,6 +76,10 @@
         @apply text-[10px] font-normal overflow-ellipsis whitespace-nowrap mt-1;
     }
 
+    .videocard-content-text {
+        @apply text-sm font-normal text-[#606060];
+    }
+
     .videocard-click-bg {
         @apply absolute inset-0 rounded-md opacity-0 group-active/click:opacity-10 bg-black transition-opacity duration-300 ease-out;
     }
