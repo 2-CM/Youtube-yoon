@@ -6,7 +6,7 @@ const HeaderSearchBar = () => {
     return (
         <div className="relative flex items-center basis-[732px] shrink grow-0">
             <div className="flex items-center flex-1 h-10">
-                <div className="search-input-container ml-10 focus-within:ml-0">
+                <div className="search-input-container bg-white ml-10 focus-within:ml-0">
                     <form action="/" className="flex flex-1 h-6">
                         <input type="text" className="search-input w-full peer outline-none" placeholder="검색" />
                         <div className="absolute left-5 top-1/2 -translate-y-1/2 hidden peer-focus:block">
@@ -33,7 +33,7 @@ const HeaderSearchBar = () => {
                     </div>
                 </button>
 
-                <div className="tooltip-voice-search">음성으로 검색</div>
+                <div className="tooltip top-[48px] left-[-27px] m-2">음성으로 검색</div>
             </div>
         </div>
     );
