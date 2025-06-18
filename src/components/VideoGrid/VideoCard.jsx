@@ -47,7 +47,7 @@ const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
                 </div>
 
                 <button
-                    className="absolute right-0 top-1 w-10 h-10 flex items-center justify-center active:bg-[rgba(0,0,0,0.1)] rounded-full"
+                    className="ripple-effect absolute right-0 top-1 w-10 h-10 flex items-center justify-center active:bg-[rgba(0,0,0,0.1)] rounded-full"
                     type="button"
                     onClick={(e) => {
                         e.stopPropagation(); // handleCardClick 동작 막기
