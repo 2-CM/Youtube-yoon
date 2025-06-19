@@ -1,8 +1,10 @@
+import { Link } from 'react-router-dom';
+
 const HeaderLogo = () => {
     return (
-        <a href="#" className="logo-padding p-">
+        <Link to="/" className="logo-padding">
             <img src="/yt-logo.svg" draggable="false" alt="로고"></img>
-        </a>
+        </Link>
     );
 };
 

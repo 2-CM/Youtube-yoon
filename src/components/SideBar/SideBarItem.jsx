@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const SideBarItem = ({ icon: Icon, href, alt, text }) => {
     const location = useLocation();
@@ -7,10 +7,10 @@ const SideBarItem = ({ icon: Icon, href, alt, text }) => {
 
     return (
         <div className="sidebar-item-container">
-            <a className={`sidebar-item ${isActive ? 'text-red-500' : ''}`} href={href}>
-                <Icon strokeWidth={1.5} alt={alt} />
+            <Link className={`sidebar-item ${isActive ? 'text-red-500' : ''}`} to={href} aria-label={alt}>
+                <Icon strokeWidth={1.5} />
                 <span className="sidebar-text">{text}</span>
-            </a>
+            </Link>
         </div>
     );
 };
