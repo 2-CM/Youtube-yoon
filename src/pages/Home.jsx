@@ -4,7 +4,7 @@ import VideoGrid from '../components/VideoGrid/VideoGrid';
 const Home = () => {
     return (
         <>
-            <div style={{ display: 'flex' }}>
+            <div className="flex">
                 <SideBar />
                 <VideoGrid />
             </div>
