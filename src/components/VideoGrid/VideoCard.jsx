@@ -1,10 +1,13 @@
 import { EllipsisVertical } from 'lucide-react';
 import UserProfile from '../../assets/user-profile.jpg';
 import VideoThumnail from '../../assets/video_thumbnail.avif';
+import { useNavigate } from 'react-router-dom';
 
 const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
+    const navigate = useNavigate();
+
     const handleCardClick = () => {
-        window.location.href = `/video/${videoId}`;
+        navigate(`/video/${videoId}`);
     };
 
     return (
