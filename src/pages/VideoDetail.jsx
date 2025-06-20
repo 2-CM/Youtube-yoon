@@ -1,4 +1,6 @@
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+
+import UserProfile from '../assets/user-profile.jpg';
 
 const VideoDetail = () => {
     return (
@@ -14,7 +16,24 @@ const VideoDetail = () => {
                             allowFullScreen
                         ></iframe>
                     </div>
-                    <div>영상 정보</div>
+
+                    <div className="mt-3 mb-6">
+                        <div className="video-title text-xl font-bold">흘러가는대로 살고싶은 브금</div>
+
+                        <div className="channel-info flex items-center w-fit mr-3 mt-3">
+                            <Link to={'/@username'}>
+                                <div className="rounded-full overflow-hidden w-10 h-10 mr-4">
+                                    <img src={UserProfile} draggable="false" alt="채널 사진" />
+                                </div>
+                            </Link>
+
+                            <Link to={'/@username'}>
+                                <div className="flex items-center font-medium text-base">동숲주민</div>
+                            </Link>
+                        </div>
+
+                        <div className="video-description">description</div>
+                    </div>
                 </div>
 
                 <div className="pt-6 pr-6 w-[402px] min-w-[300px]">추천 영상</div>
