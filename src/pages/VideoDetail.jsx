@@ -32,7 +32,27 @@ const VideoDetail = () => {
                             </Link>
                         </div>
 
-                        <div className="video-description">description</div>
+                        <div className="video-description mt-3 bg-[rgba(0,0,0,0.05)] rounded-xl text-sm font-normal cursor-pointer">
+                            <div className="p-3">
+                                <div className="w-full">
+                                    흘러가는대로 살고싶은 브금
+                                    <br />
+                                    오늘 할 일을 내일로 미루고
+                                    <br />또 미루고
+                                    <br />또 또 미루ㄱ....
+                                    <br />
+                                    <br />
+                                    이번엔 왜..? ^-^
+                                    <br />
+                                    <br />. . .<br />
+                                    <br />
+                                    우하하
+                                    <br />
+                                    <br />
+                                    배고프다 졸리다 자고싶다
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
