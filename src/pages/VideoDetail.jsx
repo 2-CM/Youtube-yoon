@@ -21,7 +21,7 @@ const VideoDetail = () => {
                 {/* 영상 */}
                 <VideoPlayer videoSrc="https://www.youtube.com/embed/0D-dHRtyiyE" />
                 {/* 영상 제목, 채널 사진 및 이름, 영상 description */}
-                <VideoInfo title={video.title} username={video.username} />
+                <VideoInfo title={video.title} username={video.username} description={video.description} />
             </div>
 
             {/* 추천 영상 */}
