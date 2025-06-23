@@ -1,9 +1,13 @@
 import VideoThumbnailImg from '../../assets/video_thumbnail.avif';
 
-const VideoThumbnail = () => {
+const VideoThumbnail = ({ layout = 'vertical' }) => {
     return (
         <div>
-            <div className="h-full overflow-hidden rounded-xl">
+            <div
+                className={`overflow-hidden rounded-xl bg-gray-200 ${
+                    layout === 'horizontal' ? 'w-[168px] h-[94px] flex-shrink-0' : 'w-full'
+                }`}
+            >
                 <img
                     className="w-full h-full object-cover"
                     src={VideoThumbnailImg}

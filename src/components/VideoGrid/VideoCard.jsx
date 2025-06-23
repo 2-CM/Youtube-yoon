@@ -2,20 +2,24 @@ import VideoCardContent from './VideoCardContent';
 import VideoThumbnail from './VideoThumbnail';
 import { useNavigate } from 'react-router-dom';
 
-const VideoCard = ({ videoId, username, title, views, uploadedAt }) => {
+const VideoCard = ({ videoId, username, title, views, uploadedAt, layout = 'vertical' }) => {
     const navigate = useNavigate();
+    const isHorizontal = layout === 'horizontal';
 
     const handleCardClick = () => {
         navigate(`/video/${videoId}`);
     };
 
     return (
-        <div onClick={handleCardClick} className="relative cursor-pointer group/click">
+        <div
+            onClick={handleCardClick}
+            className={`relative cursor-pointer group/click ${isHorizontal ? 'flex gap-2 mt-2' : ''}`}
+        >
             {/* 썸네일 */}
-            <VideoThumbnail />
+            <VideoThumbnail layout={layout} />
 
             {/* 콘텐츠 하단 영역 */}
-            <VideoCardContent username={username} title={title} views={views} uploadedAt={uploadedAt} />
+            <VideoCardContent username={username} title={title} views={views} uploadedAt={uploadedAt} layout={layout} />
 
             {/* 클릭 효과 */}
             <div className="absolute inset-0 -m-1 pointer-events-none">
