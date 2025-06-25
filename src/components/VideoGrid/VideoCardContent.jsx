@@ -28,11 +28,7 @@ const VideoCardContent = ({
             )}
 
             {/* 텍스트 영역 */}
-            <div
-                className={`${isHorizontal || compact ? 'flex flex-col pr-6' : 'pr-10'} ${
-                    isGridItem ? 'py-2' : 'pt-1'
-                }`}
-            >
+            <div className={`${isHorizontal || compact ? 'flex flex-col pr-6' : 'pr-10'} ${isGridItem ? 'py-2' : ''}`}>
                 {/* 영상 제목 */}
                 <div
                     className={`text-base font-medium line-clamp-2 break-all ${
@@ -44,12 +40,12 @@ const VideoCardContent = ({
 
                 {/* 업로더 이름 + 툴팁 */}
                 <div
-                    className={`${
-                        isHorizontal || compact ? 'text-xs text-[#606060]' : 'inline-flex group videocard-content-text'
+                    className={`group ${
+                        isHorizontal || compact ? 'text-xs text-[#606060]' : 'inline-flex videocard-content-text'
                     }`}
                 >
                     <div className="hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
-                    <div className="tooltip left-13 top-1 z-10">{username}</div>
+                    <div className="tooltip -top-5 z-10">{username}</div>
                 </div>
 
                 {/* 조회수 + 업로드 날짜 */}
