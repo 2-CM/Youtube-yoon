@@ -25,6 +25,9 @@ const RecommendedVideos = ({ videos, onCardClick }) => {
                             key={video.videoId}
                             {...video}
                             layout="vertical"
+                            showProfile={false}
+                            compact={true}
+                            isGridItem={true}
                             onClick={() => onCardClick(video.videoId)}
                         />
                     ))}

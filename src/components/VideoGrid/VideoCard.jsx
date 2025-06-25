@@ -2,7 +2,17 @@ import VideoCardContent from './VideoCardContent';
 import VideoThumbnail from './VideoThumbnail';
 import { useNavigate } from 'react-router-dom';
 
-const VideoCard = ({ videoId, username, title, views, uploadedAt, layout = 'vertical' }) => {
+const VideoCard = ({
+    videoId,
+    username,
+    title,
+    views,
+    uploadedAt,
+    layout = 'vertical',
+    showProfile = true,
+    compact = false,
+    isGridItem = false,
+}) => {
     const navigate = useNavigate();
     const isHorizontal = layout === 'horizontal';
 
@@ -19,7 +29,16 @@ const VideoCard = ({ videoId, username, title, views, uploadedAt, layout = 'vert
             <VideoThumbnail layout={layout} />
 
             {/* 콘텐츠 하단 영역 */}
-            <VideoCardContent username={username} title={title} views={views} uploadedAt={uploadedAt} layout={layout} />
+            <VideoCardContent
+                username={username}
+                title={title}
+                views={views}
+                uploadedAt={uploadedAt}
+                layout={layout}
+                showProfile={showProfile}
+                compact={compact}
+                isGridItem={isGridItem}
+            />
 
             {/* 클릭 효과 */}
             <div className="absolute inset-0 -m-1 pointer-events-none">
