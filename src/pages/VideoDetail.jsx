@@ -16,7 +16,7 @@ const VideoDetail = () => {
     };
 
     return (
-        <div className="flex mt-14">
+        <div className="flex flex-col lg:flex-row mt-14">
             <div className="pt-6 ml-6 pr-6 flex-1">
                 {/* 영상 */}
                 <VideoPlayer videoSrc="https://www.youtube.com/embed/0D-dHRtyiyE" />
@@ -25,7 +25,9 @@ const VideoDetail = () => {
             </div>
 
             {/* 추천 영상 */}
-            <RecommendedVideos videos={mockVideoData} onCardClick={handleCardClick} />
+            <div className="w-full lg:w-[402px] lg:min-w-[300px] py-6 pr-6">
+                <RecommendedVideos videos={mockVideoData} onCardClick={handleCardClick} />
+            </div>
         </div>
     );
 };
