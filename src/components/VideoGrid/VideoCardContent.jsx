@@ -5,7 +5,7 @@ const VideoCardContent = ({ username, title, views, uploadedAt, layout = 'vertic
     const isHorizontal = layout === 'horizontal';
 
     return (
-        <div className="relative flex">
+        <div className="relative flex w-full">
             {/* 프로필 이미지 (세로형 레이아웃일 때만 표시) */}
             {!isHorizontal && (
                 <div className="mt-3 mr-3 overflow-hidden rounded-full w-9 h-9 flex-shrink-0">
@@ -48,7 +48,7 @@ const VideoCardContent = ({ username, title, views, uploadedAt, layout = 'vertic
             {/* 더보기 버튼 */}
             <button
                 className={`ripple-effect ${
-                    isHorizontal ? 'absolute -right-5 w-6 h-6' : 'absolute right-0 top-1 w-10 h-10'
+                    isHorizontal ? 'absolute right-0 w-6 h-6' : 'absolute right-0 top-1 w-10 h-10'
                 } active:bg-[rgba(0,0,0,0.1)] rounded-full flex items-center justify-center`}
                 type="button"
                 onClick={(e) => e.stopPropagation()} // 상위 요소 클릭 이벤트 막기
