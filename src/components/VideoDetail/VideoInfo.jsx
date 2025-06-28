@@ -1,6 +1,6 @@
 import UserProfile from '../../assets/user-profile.jpg';
 
-const VideoInfo = ({ title, username, description }) => {
+const VideoInfo = ({ title, username, views, uploadedAt, description }) => {
     return (
         <div className="mt-3 mb-6">
             <div className="video-title text-xl font-bold">{title}</div>
@@ -18,6 +18,9 @@ const VideoInfo = ({ title, username, description }) => {
 
             <div className="video-description mt-3 bg-[rgba(0,0,0,0.05)] rounded-xl text-sm font-normal cursor-pointer">
                 <div className="p-3">
+                    <div className="font-medium">
+                        조회수 {views} {uploadedAt}
+                    </div>
                     <div className="w-full whitespace-pre-line">{description}</div>
                 </div>
             </div>
