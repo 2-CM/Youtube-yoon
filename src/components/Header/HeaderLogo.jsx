@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 const HeaderLogo = () => {
     return (
-        <Link to="/" className="logo-padding">
+        <Link to="/" className="logo-padding flex-shrink-0">
             <img src="/yt-logo.svg" draggable="false" alt="로고"></img>
         </Link>
     );
