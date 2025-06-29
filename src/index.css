@@ -87,6 +87,10 @@
     /* .videocard-click-border {
         @apply absolute inset-0 rounded-md opacity-0 group-active/click:opacity-20 border border-black transition-opacity duration-300 delay-100 ease-in;
     } */
+
+    .logout-button {
+        @apply flex justify-center items-center w-fit mt-3 mb-2 h-8 px-3 text-xs rounded-2xl bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] active:bg-[rgba(0,0,0,0.2)];
+    }
 }
 
 /* 특수한 유틸리티 클래스 정의 */

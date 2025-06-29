@@ -9,13 +9,13 @@ const MyPage = () => {
             <div className="mt-14 ml-[72px]">
                 <div className="mypage-profile [width:calc(100%-48px)] flex m-auto">
                     <div className="mr-4 my-2 flex-shrink-0 w-[120px] h-[120px]">
-                        <img className="rounded-full w-full h-full object-fill" src={UserProfile} alt="" />
+                        <img className="rounded-full w-full h-full object-fill" src={UserProfile} alt="채널 사진" />
                     </div>
 
                     <div className="flex flex-col justify-center">
                         <div className="text-4xl font-bold">채널 이름</div>
-                        <button className="flex justify-center items-center w-fit mt-3 mb-2 h-8 px-3 text-xs rounded-2xl bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] active:bg-[rgba(0,0,0,0.2)]">
-                            <img className="w-4 h-4 mr-1" src={Logout} alt="" />
+                        <button className="logout-button">
+                            <img className="w-4 h-4 mr-1" src={Logout} alt="로그아웃 아이콘" />
                             <span className="font-medium">로그아웃</span>
                         </button>
                     </div>
