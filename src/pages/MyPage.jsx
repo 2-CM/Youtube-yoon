@@ -1,6 +1,8 @@
 import Logout from '../assets/logout.svg';
 import SideBar from '../components/SideBar/SideBar';
 import UserProfile from '../assets/user-profile.jpg';
+import VideoCard from '../components/VideoGrid/VideoCard';
+import mockVideoData from '../data/mockVideoData';
 
 const MyPage = () => {
     return (
@@ -20,7 +22,27 @@ const MyPage = () => {
                         </button>
                     </div>
                 </div>
-                <div>기록</div>
+
+                <div className="pt-6 mx-6">
+                    <div className="mb-12">
+                        <div className="ml-2 mb-4">
+                            <span className="text-xl font-bold">기록</span>
+                        </div>
+                        <div className="flex justify-center gap-x-4 mx-2">
+                            {mockVideoData.slice(0, 4).map((video) => (
+                                <div key={video.videoId} className="w-[calc(25%-16.01px)]">
+                                    <VideoCard
+                                        videoId={video.videoId}
+                                        username={video.username}
+                                        title={video.title}
+                                        views={video.views}
+                                        uploadedAt={video.uploadedAt}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );
