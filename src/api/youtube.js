@@ -6,7 +6,7 @@ export const fetchPopularVideos = async () => {
     try {
         const response = await axios.get('https://www.googleapis.com/youtube/v3/videos', {
             params: {
-                part: 'snippet',
+                part: 'snippet,statistics',
                 chart: 'mostPopular',
                 regionCode: 'KR',
                 maxResults: 10,
