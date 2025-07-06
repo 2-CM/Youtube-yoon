@@ -1,6 +1,4 @@
-import VideoThumbnailImg from '../../assets/video_thumbnail.avif';
-
-const VideoThumbnail = ({ layout = 'vertical' }) => {
+const VideoThumbnail = ({ layout = 'vertical', thumbnailUrl }) => {
     return (
         <div>
             <div
@@ -10,7 +8,7 @@ const VideoThumbnail = ({ layout = 'vertical' }) => {
             >
                 <img
                     className="w-full h-full object-cover"
-                    src={VideoThumbnailImg}
+                    src={thumbnailUrl}
                     draggable="false"
                     alt="영상 썸네일 사진"
                 />

@@ -8,6 +8,7 @@ const VideoCard = ({
     title,
     views,
     uploadedAt,
+    thumbnailUrl,
     layout = 'vertical',
     showProfile = true,
     compact = false,
@@ -26,7 +27,7 @@ const VideoCard = ({
             className={`relative cursor-pointer group/click ${isHorizontal ? 'flex gap-2 mt-2' : ''}`}
         >
             {/* 썸네일 */}
-            <VideoThumbnail layout={layout} />
+            <VideoThumbnail layout={layout} thumbnailUrl={thumbnailUrl} />
 
             {/* 콘텐츠 하단 영역 */}
             <VideoCardContent
