@@ -28,7 +28,7 @@ const RecommendedVideos = ({ videos, onCardClick }) => {
                             showProfile={false}
                             compact={true}
                             isGridItem={true}
-                            onClick={() => onCardClick(video.videoId)}
+                            onClick={() => onCardClick(video)}
                         />
                     ))}
                 </div>
@@ -39,7 +39,7 @@ const RecommendedVideos = ({ videos, onCardClick }) => {
                             key={video.videoId}
                             {...video}
                             layout="horizontal"
-                            onClick={() => onCardClick(video.videoId)}
+                            onClick={() => onCardClick(video)}
                         />
                     ))}
                 </div>
