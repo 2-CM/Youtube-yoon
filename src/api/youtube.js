@@ -9,7 +9,7 @@ export const fetchPopularVideos = async () => {
                 part: 'snippet,statistics',
                 chart: 'mostPopular',
                 regionCode: 'KR',
-                maxResults: 10,
+                maxResults: 50,
                 key: API_KEY,
             },
         });

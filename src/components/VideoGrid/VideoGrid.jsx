@@ -1,8 +1,8 @@
+import { formatTimeAgo, formatViewCount } from '../../utils/format';
 import { useEffect, useState } from 'react';
 
 import VideoCard from './VideoCard';
 import { fetchPopularVideos } from '../../api/youtube';
-import { formatViewCount } from '../../utils/format';
 import mockVideoData from '../../data/mockVideoData';
 
 const VideoGrid = () => {
@@ -22,7 +22,7 @@ const VideoGrid = () => {
                         username={video.snippet.channelTitle}
                         title={video.snippet.title}
                         views={formatViewCount(video.statistics?.viewCount || 0)}
-                        uploadedAt={video.snippet.publishedAt}
+                        uploadedAt={formatTimeAgo(video.snippet.publishedAt)}
                         thumbnailUrl={video.snippet.thumbnails.medium.url}
                     />
                 ))}
