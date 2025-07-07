@@ -24,6 +24,7 @@ const VideoGrid = () => {
                         views={formatViewCount(video.statistics?.viewCount || 0)}
                         uploadedAt={formatTimeAgo(video.snippet.publishedAt)}
                         thumbnailUrl={video.snippet.thumbnails.medium.url}
+                        channelThumbnail={video.channelThumbnail}
                     />
                 ))}
             </div>

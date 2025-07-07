@@ -9,6 +9,7 @@ const VideoCard = ({
     views,
     uploadedAt,
     thumbnailUrl,
+    channelThumbnail,
     layout = 'vertical',
     showProfile = true,
     compact = false,
@@ -35,6 +36,7 @@ const VideoCard = ({
                 title={title}
                 views={views}
                 uploadedAt={uploadedAt}
+                channelThumbnail={channelThumbnail}
                 layout={layout}
                 showProfile={showProfile}
                 compact={compact}

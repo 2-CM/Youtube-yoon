@@ -6,6 +6,7 @@ const VideoCardContent = ({
     title,
     views,
     uploadedAt,
+    channelThumbnail,
     layout = 'vertical',
     showProfile = true,
     compact = false,
@@ -20,9 +21,9 @@ const VideoCardContent = ({
                 <div className="mt-3 mr-3 overflow-hidden rounded-full w-9 h-9 flex-shrink-0">
                     <img
                         className="w-full h-full object-cover"
-                        src={UserProfile}
+                        src={channelThumbnail}
                         draggable="false"
-                        alt="채널 프로필 사진"
+                        alt={`${username}의 채널 이미지`}
                     />
                 </div>
             )}
