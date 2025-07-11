@@ -10,6 +10,7 @@ const VideoDetail = () => {
     const location = useLocation();
     const video = location.state?.video;
     const { handleVideoClick } = useVideoNavigation();
+    const shuffledVideos = videos.slice().sort(() => Math.random() - 0.5);
 
     if (!video) {
         return <div>영상 정보를 불러올 수 없습니다.</div>;
@@ -37,7 +38,7 @@ const VideoDetail = () => {
 
             {/* 추천 영상 */}
             <div className="w-full lg:w-[402px] lg:min-w-[300px] py-6 pr-6">
-                <RecommendedVideos videos={videos} onCardClick={handleVideoClick} />
+                <RecommendedVideos videos={shuffledVideos} onCardClick={handleVideoClick} />
             </div>
         </div>
     );
