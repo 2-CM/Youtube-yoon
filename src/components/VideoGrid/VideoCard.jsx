@@ -1,6 +1,6 @@
 import VideoCardContent from './VideoCardContent';
 import VideoThumbnail from './VideoThumbnail';
-import { useNavigate } from 'react-router-dom';
+import { useVideoNavigation } from '../../hooks/useVideoNavigation';
 
 const VideoCard = ({
     videoId,
@@ -8,25 +8,40 @@ const VideoCard = ({
     title,
     views,
     uploadedAt,
+    thumbnailUrl,
+    channelThumbnail,
+    description,
+    onClick,
     layout = 'vertical',
     showProfile = true,
     compact = false,
     isGridItem = false,
 }) => {
-    const navigate = useNavigate();
     const isHorizontal = layout === 'horizontal';
+    const { handleVideoClick } = useVideoNavigation();
 
-    const handleCardClick = () => {
-        navigate(`/video/${videoId}`);
+    const videoData = {
+        videoId,
+        username,
+        title,
+        views,
+        uploadedAt,
+        thumbnailUrl,
+        channelThumbnail,
+        description,
+    };
+
+    const onCardClick = () => {
+        handleVideoClick(videoData, onClick);
     };
 
     return (
         <div
-            onClick={handleCardClick}
+            onClick={onCardClick}
             className={`relative cursor-pointer group/click ${isHorizontal ? 'flex gap-2 mt-2' : ''}`}
         >
             {/* 썸네일 */}
-            <VideoThumbnail layout={layout} />
+            <VideoThumbnail layout={layout} thumbnailUrl={thumbnailUrl} />
 
             {/* 콘텐츠 하단 영역 */}
             <VideoCardContent
@@ -34,6 +49,7 @@ const VideoCard = ({
                 title={title}
                 views={views}
                 uploadedAt={uploadedAt}
+                channelThumbnail={channelThumbnail}
                 layout={layout}
                 showProfile={showProfile}
                 compact={compact}

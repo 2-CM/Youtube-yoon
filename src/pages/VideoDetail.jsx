@@ -1,28 +1,34 @@
-import { useNavigate, useParams } from 'react-router-dom';
-
 import RecommendedVideos from '../components/VideoDetail/RecommendedVideos';
 import VideoInfo from '../components/VideoDetail/VideoInfo';
 import VideoPlayer from '../components/VideoDetail/VideoPlayer';
-import mockVideoData from '../data/mockVideoData';
+import { useLocation } from 'react-router-dom';
+import { usePopularVideos } from '../hooks/usePopularVideos';
+import { useVideoNavigation } from '../hooks/useVideoNavigation';
 
 const VideoDetail = () => {
-    const navigate = useNavigate();
-    const { videoId } = useParams();
+    const { videos, error } = usePopularVideos();
+    const location = useLocation();
+    const video = location.state?.video;
+    const { handleVideoClick } = useVideoNavigation();
+    const shuffledVideos = videos.slice().sort(() => Math.random() - 0.5);
 
-    const video = mockVideoData.find((v) => v.videoId === Number(videoId));
-
-    const handleCardClick = (videoId) => {
-        navigate(`/video/${videoId}`);
-    };
+    if (!video) {
+        return <div>영상 정보를 불러올 수 없습니다.</div>;
+    }
+    if (error) {
+        return <div>추천 영상 데이터를 불러오는 중 오류가 발생했습니다.</div>;
+    }
 
     return (
         <div className="flex flex-col lg:flex-row mt-14">
             <div className="pt-6 ml-6 pr-6 flex-1">
-                {/* 영상 */}
-                <VideoPlayer videoSrc="https://www.youtube.com/embed/0D-dHRtyiyE" />
-                {/* 영상 제목, 채널 사진 및 이름, 영상 description */}
+                {/* VideoPlayer에 영상 ID 또는 영상 URL 넘기기 */}
+                <VideoPlayer videoSrc={`https://www.youtube.com/embed/${video.videoId}`} />
+
+                {/* VideoInfo에 영상 정보 넘기기 */}
                 <VideoInfo
                     title={video.title}
+                    channelThumbnail={video.channelThumbnail}
                     username={video.username}
                     views={video.views}
                     uploadedAt={video.uploadedAt}
@@ -32,7 +38,7 @@ const VideoDetail = () => {
 
             {/* 추천 영상 */}
             <div className="w-full lg:w-[402px] lg:min-w-[300px] py-6 pr-6">
-                <RecommendedVideos videos={mockVideoData} onCardClick={handleCardClick} />
+                <RecommendedVideos videos={shuffledVideos} onCardClick={handleVideoClick} />
             </div>
         </div>
     );
