@@ -49,11 +49,11 @@
     }
 
     .search-input-container {
-        @apply flex flex-1 items-center h-10 border border-[#c6c6c6] rounded-[40px_0_0_40px] pl-4 pr-1 py-0 shadow-[inset_0_1px_2px_#eee];
+        @apply flex flex-1 items-center h-10 bg-white border border-[#c6c6c6] rounded-[40px_0_0_40px] pl-4 pr-1 py-0 ml-10 shadow-[inset_0_1px_2px_#eee];
     }
 
     .search-input-container:focus-within {
-        @apply border-r border-[#1c62b9] pl-14 shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)];
+        @apply border-r border-[#1c62b9] pl-14 ml-0 shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)];
     }
 
     .search-button {
