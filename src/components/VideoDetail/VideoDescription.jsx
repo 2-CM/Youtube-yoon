@@ -20,7 +20,7 @@ const VideoDescription = ({ views, uploadedAt, description }) => {
     }, [isExpanded]);
 
     return (
-        <div className="video-description mt-3 bg-[rgba(0,0,0,0.05)] rounded-xl text-sm font-normal cursor-pointer">
+        <div className="video-description mt-3 bg-black/5 dark:bg-white/10 rounded-xl text-sm font-normal cursor-pointer">
             <div className="p-3 relative">
                 {/* 조회수 및 업로드 날짜 표시 */}
                 <div className="font-medium">
@@ -39,7 +39,7 @@ const VideoDescription = ({ views, uploadedAt, description }) => {
                 {/* 더보기/간략히 버튼 */}
                 <button
                     onClick={() => setIsExpanded((prev) => !prev)}
-                    className="mt-2 font-medium rounded active:bg-black/20 transition-colors"
+                    className="mt-2 font-medium rounded active:bg-black/20 dark:active:bg-white/20 transition-colors"
                 >
                     {isExpanded ? '간략히' : '...더보기'}
                 </button>

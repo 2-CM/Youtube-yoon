@@ -9,7 +9,7 @@ import VideoDetail from './pages/VideoDetail';
 
 function App() {
     return (
-        <div className="bg-white text-black dark:bg-zinc-900 dark:text-white">
+        <div className="bg-white text-black dark:bg-black dark:text-white">
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />

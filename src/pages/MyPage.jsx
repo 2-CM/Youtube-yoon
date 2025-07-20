@@ -6,7 +6,8 @@ import mockVideoData from '../data/mockVideoData';
 
 const MyPage = () => {
     return (
-        <>
+        <div className="min-h-screen">
+            <div className="h-14 bg-white dark:bg-black"></div>
             <SideBar />
             <div className="mt-14 ml-[72px]">
                 <div className="mypage-profile [width:calc(100%-48px)] flex m-auto">
@@ -44,7 +45,7 @@ const MyPage = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

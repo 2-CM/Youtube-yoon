@@ -63,7 +63,7 @@ const VideoCardContent = ({
                     isHorizontal || compact ? 'absolute right-0 w-6 h-6' : 'absolute right-0 top-1 w-10 h-10'
                 }
                 ${isGridItem ? 'mt-2' : ''}
-                active:bg-[rgba(0,0,0,0.1)] rounded-full flex items-center justify-center`}
+                active:bg-black/10 dark:active:bg-white/10 rounded-full flex items-center justify-center`}
                 type="button"
                 onClick={(e) => e.stopPropagation()} // 상위 요소 클릭 이벤트 막기
             >

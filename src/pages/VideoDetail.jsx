@@ -20,27 +20,30 @@ const VideoDetail = () => {
     }
 
     return (
-        <div className="flex flex-col lg:flex-row mt-14">
-            <div className="pt-6 ml-6 pr-6 flex-1">
-                {/* VideoPlayer에 영상 ID 또는 영상 URL 넘기기 */}
-                <VideoPlayer videoSrc={`https://www.youtube.com/embed/${video.videoId}`} />
+        <>
+            <div className="h-14 bg-white dark:bg-black"></div>
+            <div className="flex flex-col lg:flex-row">
+                <div className="pt-6 ml-6 pr-6 flex-1">
+                    {/* VideoPlayer에 영상 ID 또는 영상 URL 넘기기 */}
+                    <VideoPlayer videoSrc={`https://www.youtube.com/embed/${video.videoId}`} />
 
-                {/* VideoInfo에 영상 정보 넘기기 */}
-                <VideoInfo
-                    title={video.title}
-                    channelThumbnail={video.channelThumbnail}
-                    username={video.username}
-                    views={video.views}
-                    uploadedAt={video.uploadedAt}
-                    description={video.description}
-                />
-            </div>
+                    {/* VideoInfo에 영상 정보 넘기기 */}
+                    <VideoInfo
+                        title={video.title}
+                        channelThumbnail={video.channelThumbnail}
+                        username={video.username}
+                        views={video.views}
+                        uploadedAt={video.uploadedAt}
+                        description={video.description}
+                    />
+                </div>
 
-            {/* 추천 영상 */}
-            <div className="w-full lg:w-[402px] lg:min-w-[300px] py-6 pr-6">
-                <RecommendedVideos videos={shuffledVideos} onCardClick={handleVideoClick} />
+                {/* 추천 영상 */}
+                <div className="w-full lg:w-[402px] lg:min-w-[300px] py-6 pr-6">
+                    <RecommendedVideos videos={shuffledVideos} onCardClick={handleVideoClick} />
+                </div>
             </div>
-        </div>
+        </>
     );
 };
 

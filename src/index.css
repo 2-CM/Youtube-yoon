@@ -81,7 +81,7 @@
     }
 
     .videocard-click-bg {
-        @apply absolute inset-0 rounded-md opacity-0 group-hover/click:opacity-10 bg-black transition-opacity duration-300 ease-out;
+        @apply absolute inset-0 rounded-md opacity-0 group-hover/click:opacity-10 bg-black dark:bg-white/50 transition-opacity duration-300 ease-out;
     }
 
     /* .videocard-click-border {
