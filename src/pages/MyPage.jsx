@@ -1,4 +1,4 @@
-import Logout from '../assets/logout.svg';
+import { LogOut } from 'lucide-react';
 import SideBar from '../components/SideBar/SideBar';
 import UserProfile from '../assets/user-profile.jpg';
 import VideoCard from '../components/VideoGrid/VideoCard';
@@ -18,7 +18,7 @@ const MyPage = () => {
                     <div className="flex flex-col justify-center">
                         <div className="text-4xl font-bold">채널 이름</div>
                         <button className="logout-button">
-                            <img className="w-4 h-4 mr-1" src={Logout} alt="로그아웃 아이콘" />
+                            <LogOut className="w-4 h-4 mr-1" strokeWidth={1} alt="로그아웃 아이콘" />
                             <span className="font-medium">로그아웃</span>
                         </button>
                     </div>

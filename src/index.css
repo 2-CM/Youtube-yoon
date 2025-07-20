@@ -89,7 +89,7 @@
     } */
 
     .logout-button {
-        @apply flex justify-center items-center w-fit mt-3 mb-2 h-8 px-3 text-xs rounded-2xl bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] active:bg-[rgba(0,0,0,0.2)];
+        @apply flex justify-center items-center w-fit mt-3 mb-2 h-8 px-3 text-xs rounded-2xl bg-black/5 hover:bg-black/[0.15] active:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 dark:active:bg-white/25;
     }
 }
 
