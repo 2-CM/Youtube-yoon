@@ -69,7 +69,7 @@
     }
 
     .sidebar-item-container {
-        @apply hover:bg-[rgba(0,0,0,0.05)] rounded-lg active:bg-[rgba(0,0,0,0.1)];
+        @apply rounded-lg hover:bg-black/5 active:bg-black/10 dark:hover:bg-white/[0.15] dark:active:bg-white/25;
     }
 
     .sidebar-text {

@@ -35,11 +35,10 @@ const HeaderSearchBar = () => {
                 </button>
             </div>
 
-            <div className="rounded-full ml-3 bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] relative group dark:bg-white/10 dark:hover:bg-white/20">
+            <div className="rounded-full ml-3 bg-black/10 hover:bg-black/[0.15] relative group dark:bg-white/10 dark:hover:bg-white/20">
                 <button className="w-10 h-10 flex items-center justify-center relative">
                     <div>
-                        <Mic className="block dark:hidden" color="black" strokeWidth={1} alt="음성 검색 아이콘" />
-                        <Mic className="hidden dark:block" strokeWidth={1} alt="음성 검색 아이콘" />
+                        <Mic strokeWidth={1} alt="음성 검색 아이콘" />
                     </div>
                 </button>
 
