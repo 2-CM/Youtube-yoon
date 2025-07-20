@@ -39,20 +39,22 @@ const VideoCardContent = ({
                     {title}
                 </div>
 
-                {/* 업로더 이름 + 툴팁 */}
                 <div
-                    className={`group ${
-                        isHorizontal || compact ? 'text-xs text-[#606060]' : 'inline-flex videocard-content-text'
+                    className={`text-[#606060] dark:text-[#aaa] ${
+                        isHorizontal || compact ? 'text-xs' : 'videocard-content-text'
                     }`}
                 >
-                    <div className="hover:text-[#0f0f0f] line-clamp-2 break-all">{username}</div>
-                    <div className="tooltip -top-5 z-10">{username}</div>
-                </div>
+                    {/* 업로더 이름 + 툴팁 */}
+                    <div className="group inline-block align-top">
+                        <div className="hover:text-[#0f0f0f] dark:hover:text-white line-clamp-2 break-all">
+                            {username}
+                        </div>
+                        <div className="tooltip -top-5 z-10">{username}</div>
+                    </div>
 
-                {/* 조회수 + 업로드 날짜 */}
-                <div
-                    className={`${isHorizontal || compact ? 'text-xs text-[#606060]' : 'videocard-content-text'}`}
-                >{`조회수 ${views} • ${uploadedAt}`}</div>
+                    {/* 조회수 + 업로드 날짜 */}
+                    <div>{`조회수 ${views} • ${uploadedAt}`}</div>
+                </div>
             </div>
 
             {/* 더보기 버튼 */}

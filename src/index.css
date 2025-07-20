@@ -77,7 +77,7 @@
     }
 
     .videocard-content-text {
-        @apply text-sm font-normal text-[#606060];
+        @apply text-sm font-normal;
     }
 
     .videocard-click-bg {
