@@ -6,10 +6,9 @@ import mockVideoData from '../data/mockVideoData';
 
 const MyPage = () => {
     return (
-        <div className="min-h-screen">
-            <div className="h-14 bg-white dark:bg-black"></div>
+        <>
             <SideBar />
-            <div className="mt-14 ml-[72px]">
+            <div className="pt-14 ml-[72px]">
                 <div className="mypage-profile [width:calc(100%-48px)] flex m-auto">
                     <div className="mr-4 my-2 flex-shrink-0 w-[120px] h-[120px]">
                         <img className="rounded-full w-full h-full object-fill" src={UserProfile} alt="채널 사진" />
@@ -45,7 +44,7 @@ const MyPage = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
