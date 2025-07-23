@@ -5,8 +5,8 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase';
 import { onAuthStateChanged } from 'firebase/auth';
 
-// Context 생성
-const AuthContext = createContext();
+// Context 생성 및 export
+export const AuthContext = createContext();
 
 // Context Provider 컴포넌트 정의
 export const AuthProvider = ({ children }) => {
