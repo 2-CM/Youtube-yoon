@@ -56,10 +56,9 @@ const VideoCard = ({
                 isGridItem={isGridItem}
             />
 
-            {/* 클릭 효과 */}
+            {/* 호버 효과 */}
             <div className="absolute inset-0 -m-1 pointer-events-none">
-                <div className="videocard-click-bg"></div>
-                {/* <div className="videocard-click-border"></div> */}
+                <div className="videocard-hover-bg"></div>
             </div>
         </div>
     );

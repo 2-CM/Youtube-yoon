@@ -9,14 +9,14 @@ import VideoDetail from './pages/VideoDetail';
 
 function App() {
     return (
-        <>
+        <div className="bg-white text-black dark:bg-black dark:text-white min-h-screen">
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/video/:videoId" element={<VideoDetail />} />
                 <Route path="/mypage" element={<MyPage />} />
             </Routes>
-        </>
+        </div>
     );
 }
 

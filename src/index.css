@@ -49,11 +49,11 @@
     }
 
     .search-input-container {
-        @apply flex flex-1 items-center h-10 border border-[#c6c6c6] rounded-[40px_0_0_40px] pl-4 pr-1 py-0 shadow-[inset_0_1px_2px_#eee];
+        @apply flex flex-1 items-center h-10 bg-white border border-[#c6c6c6] rounded-[40px_0_0_40px] pl-4 pr-1 py-0 ml-10 shadow-[inset_0_1px_2px_#eee];
     }
 
     .search-input-container:focus-within {
-        @apply border-r border-[#1c62b9] pl-14 shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)];
+        @apply border-r border-[#1c62b9] pl-14 ml-0 shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)];
     }
 
     .search-button {
@@ -69,7 +69,7 @@
     }
 
     .sidebar-item-container {
-        @apply hover:bg-[rgba(0,0,0,0.05)] rounded-lg active:bg-[rgba(0,0,0,0.1)];
+        @apply rounded-lg hover:bg-black/5 active:bg-black/10 dark:hover:bg-white/[0.15] dark:active:bg-white/25;
     }
 
     .sidebar-text {
@@ -77,19 +77,15 @@
     }
 
     .videocard-content-text {
-        @apply text-sm font-normal text-[#606060];
+        @apply text-sm font-normal;
     }
 
-    .videocard-click-bg {
-        @apply absolute inset-0 rounded-md opacity-0 group-hover/click:opacity-10 bg-black transition-opacity duration-300 ease-out;
+    .videocard-hover-bg {
+        @apply absolute inset-0 rounded-md opacity-0 group-hover/click:opacity-10 bg-black dark:bg-white/70 transition-opacity duration-300 ease-out;
     }
-
-    /* .videocard-click-border {
-        @apply absolute inset-0 rounded-md opacity-0 group-active/click:opacity-20 border border-black transition-opacity duration-300 delay-100 ease-in;
-    } */
 
     .logout-button {
-        @apply flex justify-center items-center w-fit mt-3 mb-2 h-8 px-3 text-xs rounded-2xl bg-[rgba(0,0,0,0.05)] hover:bg-[rgba(0,0,0,0.15)] active:bg-[rgba(0,0,0,0.2)];
+        @apply flex justify-center items-center w-fit mt-3 mb-2 h-8 px-3 text-xs rounded-2xl bg-black/5 hover:bg-black/[0.15] active:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 dark:active:bg-white/25;
     }
 }
 
