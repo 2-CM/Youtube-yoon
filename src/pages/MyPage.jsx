@@ -2,9 +2,18 @@ import { LogOut } from 'lucide-react';
 import SideBar from '../components/SideBar/SideBar';
 import UserProfile from '../assets/user-profile.jpg';
 import VideoCard from '../components/VideoGrid/VideoCard';
+import { logout } from '../hooks/useAuth';
 import mockVideoData from '../data/mockVideoData';
 
 const MyPage = () => {
+    const handleLogout = async () => {
+        try {
+            await logout();
+        } catch (error) {
+            console.error('로그아웃 실패', error);
+        }
+    };
+
     return (
         <>
             <SideBar />
@@ -16,7 +25,7 @@ const MyPage = () => {
 
                     <div className="flex flex-col justify-center">
                         <div className="text-4xl font-bold">채널 이름</div>
-                        <button className="logout-button">
+                        <button className="logout-button" onClick={handleLogout}>
                             <LogOut className="w-4 h-4 mr-1" strokeWidth={1} alt="로그아웃 아이콘" />
                             <span className="font-medium">로그아웃</span>
                         </button>
