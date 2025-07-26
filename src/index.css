@@ -89,7 +89,7 @@
     }
 
     .login-button {
-        @apply flex justify-center items-center h-9 w-24 border border-black/10 rounded-full text-sm text-[#065fd4] hover:bg-sky-100 hover:border-none active:bg-sky-700/20 dark:text-white dark:border-white/30 dark:hover:bg-white/20 dark:active:bg-white/25;
+        @apply flex justify-center items-center h-9 w-24 border border-black/10 rounded-full text-sm text-[#065fd4] hover:bg-sky-100 hover:border-none active:bg-sky-700/20 dark:text-[#3ea6ff] dark:border-white/30 dark:hover:bg-white/20 dark:active:bg-white/25;
     }
 }
 
