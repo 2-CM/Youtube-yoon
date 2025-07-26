@@ -1,14 +1,22 @@
 import { LogOut, SquarePlay } from 'lucide-react';
+import { loginWithGoogle, logout } from '../hooks/useAuth';
 
 import LoginButton from '../components/LoginButton';
 import SideBar from '../components/SideBar/SideBar';
 import VideoCard from '../components/VideoGrid/VideoCard';
-import { logout } from '../hooks/useAuth';
 import mockVideoData from '../data/mockVideoData';
 import { useAuthContext } from '../hooks/useAuthContext';
 
 const MyPage = () => {
     const { currentUser } = useAuthContext(); // 로그인 상태 확인
+
+    const handleLogin = async () => {
+        try {
+            await loginWithGoogle();
+        } catch (error) {
+            console.error('로그인 실패', error);
+        }
+    };
 
     const handleLogout = async () => {
         try {
@@ -75,7 +83,7 @@ const MyPage = () => {
                             <p className="text-2xl mb-4">좋아하는 동영상을 감상해 보세요.</p>
                             <p className="text-sm">저장하거나 좋아요 표시한 동영상을 보려면 로그인하세요.</p>
                         </div>
-                        <LoginButton />
+                        <LoginButton onLogin={handleLogin} />
                     </div>
                 )}
             </div>
