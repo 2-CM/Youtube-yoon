@@ -2,7 +2,6 @@ import { LogOut, SquarePlay } from 'lucide-react';
 
 import LoginButton from '../components/LoginButton';
 import SideBar from '../components/SideBar/SideBar';
-import UserProfile from '../assets/user-profile.jpg';
 import VideoCard from '../components/VideoGrid/VideoCard';
 import { logout } from '../hooks/useAuth';
 import mockVideoData from '../data/mockVideoData';
@@ -30,13 +29,14 @@ const MyPage = () => {
                             <div className="mr-4 my-2 flex-shrink-0 w-[120px] h-[120px]">
                                 <img
                                     className="rounded-full w-full h-full object-fill"
-                                    src={UserProfile}
+                                    src={currentUser.photoURL}
+                                    draggable="false"
                                     alt="채널 사진"
                                 />
                             </div>
 
                             <div className="flex flex-col justify-center">
-                                <div className="text-4xl font-bold">채널 이름</div>
+                                <div className="text-4xl font-bold">{currentUser.displayName}</div>
                                 <button className="logout-button" onClick={handleLogout}>
                                     <LogOut className="w-4 h-4 mr-1" strokeWidth={1} alt="로그아웃 아이콘" />
                                     <span className="font-medium">로그아웃</span>
