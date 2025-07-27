@@ -87,6 +87,10 @@
     .logout-button {
         @apply flex justify-center items-center w-fit mt-3 mb-2 h-8 px-3 text-xs rounded-2xl bg-black/5 hover:bg-black/[0.15] active:bg-black/20 dark:bg-white/10 dark:hover:bg-white/20 dark:active:bg-white/25;
     }
+
+    .login-button {
+        @apply flex justify-center items-center h-9 w-24 border border-black/10 rounded-full text-sm text-[#065fd4] hover:bg-sky-100 hover:border-none active:bg-sky-700/20 dark:text-[#3ea6ff] dark:border-white/30 dark:hover:bg-white/20 dark:active:bg-white/25;
+    }
 }
 
 /* 특수한 유틸리티 클래스 정의 */

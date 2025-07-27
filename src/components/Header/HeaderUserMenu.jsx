@@ -1,30 +1,29 @@
+import LoginButton from '../LoginButton.jsx';
 import ThemeToggleButton from './ThemeToggleButton';
-import { useNavigate } from 'react-router-dom';
-import userProfile from '../../assets/user-profile.jpg';
+import UserProfile from './UserProfile.jsx';
+import { loginWithGoogle } from '../../hooks/useAuth';
+import { useAuthContext } from '../../hooks/useAuthContext';
 
 const HeaderUserMenu = () => {
-    const navigate = useNavigate();
+    const { currentUser } = useAuthContext();
 
-    const handleProfileClick = () => {
-        navigate('/mypage');
+    const handleLogin = async () => {
+        try {
+            await loginWithGoogle();
+        } catch (error) {
+            console.error('로그인 실패', error);
+        }
     };
 
     return (
-        <div className="flex items-center">
+        <div className="flex items-center ml-4">
             <ThemeToggleButton />
-
-            <div className="flex px-1">
-                <button
-                    className="mx-2 w-8 h-8 rounded-full overflow-hidden focus:shadow-[0_0_0_1px_#1c62b9]"
-                    onClick={handleProfileClick}
-                >
-                    <img
-                        className="w-full h-full object-cover"
-                        draggable="false"
-                        src={userProfile}
-                        alt="사용자 프로필 이미지"
-                    />
-                </button>
+            <div className="flex items-center ml-2">
+                {currentUser ? (
+                    <UserProfile photoURL={currentUser.photoURL || ''} />
+                ) : (
+                    <LoginButton onLogin={handleLogin} />
+                )}
             </div>
         </div>
     );
