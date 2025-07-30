@@ -47,3 +47,38 @@ export const fetchPopularVideos = async () => {
         throw error;
     }
 };
+
+export const fetchSearchResults = async (query) => {
+    try {
+        // 사용자가 입력한 검색어로 관련 영상 검색
+        const searchRes = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+            params: {
+                part: 'snippet',
+                q: query, // 검색어
+                type: 'video', // 영상만 검색
+                regionCode: 'KR',
+                maxResults: 20,
+                key: API_KEY,
+            },
+        });
+
+        const videos = searchRes.data.items;
+        // 검색 결과에서 videoId만 추출
+        const videoIds = videos.map((v) => v.id.videoId).join(',');
+
+        // videoId들을 바탕으로 영상의 상세 정보 및 조회수 등 통계 조회
+        const detailsRes = await axios.get('https://www.googleapis.com/youtube/v3/videos', {
+            params: {
+                part: 'snippet,statistics',
+                id: videoIds,
+                key: API_KEY,
+            },
+        });
+
+        // 상세 정보가 포함된 영상 리스트 반환
+        return detailsRes.data.items;
+    } catch (error) {
+        console.error('🔥 검색 API 호출 실패:', error);
+        throw error;
+    }
+};
