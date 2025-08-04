@@ -57,7 +57,7 @@
     }
 
     .search-button {
-        @apply flex items-center justify-center cursor-pointer h-10 w-16 bg-[#f8f8f8] border border-[#d3d3d3] rounded-[0_40px_40px_0] hover:bg-[#f0f0f0] hover:border-[#c6c6c6];
+        @apply flex items-center justify-center cursor-pointer h-10 w-16 absolute -right-16 bg-[#f8f8f8] border border-[#d3d3d3] rounded-[0_40px_40px_0] hover:bg-[#f0f0f0] hover:border-[#c6c6c6];
     }
 
     .tooltip {
