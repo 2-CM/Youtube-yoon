@@ -18,8 +18,14 @@ const HeaderSearchBar = () => {
 
     return (
         <div className="flex items-center basis-[732px] shrink grow-0">
-            <form onSubmit={handleSubmit} className="flex flex-1 items-center h-10">
-                <div className="search-input-container relative flex items-center flex-1 dark:bg-[#121212] dark:border-[#303030] dark:shadow-none dark:focus-within:border-[#1c62b9]">
+            <form onSubmit={handleSubmit} className="flex flex-1 items-center h-10 group">
+                <div className={`search-input-container`}>
+                    {/* 검색 아이콘 */}
+                    <div className="absolute left-5 top-1/2 -translate-y-1/2 pointer-events-none hidden group-focus-within:block">
+                        <Search className="h-5 w-5" strokeWidth={1} alt="검색 아이콘" />
+                    </div>
+
+                    {/* 검색창 */}
                     <input
                         type="text"
                         value={query}
@@ -27,9 +33,6 @@ const HeaderSearchBar = () => {
                         className="search-input w-full peer outline-none bg-inherit"
                         placeholder="검색"
                     />
-                    <div className="absolute left-5 top-1/2 -translate-y-1/2 hidden peer-focus:block">
-                        <Search className="h-5 w-5" strokeWidth={1} alt="검색 아이콘" />
-                    </div>
 
                     {/* 텍스트 입력 보조 버튼 */}
                     <button
@@ -46,6 +49,10 @@ const HeaderSearchBar = () => {
                         className="search-button dark:bg-white/10 dark:border-[#303030] ml-2"
                         title="검색"
                         aria-label="검색 버튼"
+                        onMouseDown={(e) => {
+                            e.preventDefault(); // 클릭 시 포커스 이동 막기
+                            e.currentTarget.form.querySelector('input')?.blur(); // input 포커스 해제
+                        }}
                     >
                         <Search strokeWidth={1} alt="검색 아이콘" className="w-6 h-6" />
                     </button>
