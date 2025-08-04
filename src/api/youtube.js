@@ -2,6 +2,35 @@ import axios from 'axios';
 
 const API_KEY = import.meta.env.VITE_YOUTUBE_API_KEY;
 
+// 채널 ID 배열 받아서 채널 정보(프로필 사진) 가져오기
+const fetchChannelThumbnails = async (channelIds) => {
+    const channelRes = await axios.get('https://www.googleapis.com/youtube/v3/channels', {
+        params: {
+            part: 'snippet',
+            id: channelIds.join(','),
+            key: API_KEY,
+        },
+    });
+
+    const channelThumbMap = {};
+    channelRes.data.items.forEach((channel) => {
+        channelThumbMap[channel.id] = channel.snippet.thumbnails.default.url;
+    });
+
+    return channelThumbMap;
+};
+
+// 영상 배열 받아서 채널 썸네일 붙여서 반환하는 함수
+const addChannelThumbnails = async (videos) => {
+    const channelIds = [...new Set(videos.map((v) => v.snippet.channelId))];
+    const channelThumbMap = await fetchChannelThumbnails(channelIds);
+
+    return videos.map((video) => ({
+        ...video,
+        channelThumbnail: channelThumbMap[video.snippet.channelId] || '',
+    }));
+};
+
 export const fetchPopularVideos = async () => {
     try {
         // 인기 영상 목록 요청 (영상 정보 + 조회수)
@@ -17,33 +46,9 @@ export const fetchPopularVideos = async () => {
 
         const videos = videoRes.data.items;
 
-        // 영상마다 채널 ID 추출 (중복 제거)
-        const channelIds = [...new Set(videos.map((v) => v.snippet.channelId))];
-
-        // 채널 ID 목록을 통해 채널 정보 요청 (프로필 사진)
-        const channelRes = await axios.get('https://www.googleapis.com/youtube/v3/channels', {
-            params: {
-                part: 'snippet',
-                id: channelIds.join(','), // 쉼표로 연결해서 한 번에 요청
-                key: API_KEY,
-            },
-        });
-
-        // 채널 ID → 프로필 사진 URL 매핑
-        const channelThumbMap = {};
-        channelRes.data.items.forEach((channel) => {
-            channelThumbMap[channel.id] = channel.snippet.thumbnails.default.url;
-        });
-
-        // 각 영상에 해당 채널의 프로필 사진 URL 추가
-        const videosUpdated = videos.map((video) => ({
-            ...video,
-            channelThumbnail: channelThumbMap[video.snippet.channelId],
-        }));
-
-        return videosUpdated;
+        return await addChannelThumbnails(videos);
     } catch (error) {
-        console.error('🔥 인기 동영상 API 호출 실패:', error);
+        console.error('인기 동영상 API 호출 실패:', error);
         throw error;
     }
 };
@@ -75,10 +80,11 @@ export const fetchSearchResults = async (query) => {
             },
         });
 
-        // 상세 정보가 포함된 영상 리스트 반환
-        return detailsRes.data.items;
+        const detailedVideos = detailsRes.data.items;
+
+        return await addChannelThumbnails(detailedVideos);
     } catch (error) {
-        console.error('🔥 검색 API 호출 실패:', error);
+        console.error('검색 API 호출 실패:', error);
         throw error;
     }
 };
