@@ -1,13 +1,19 @@
 import { Mic, Search, X } from 'lucide-react';
-import { useRef, useState } from 'react';
-
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const HeaderSearchBar = () => {
     // 검색어 상태 관리
     const [query, setQuery] = useState('');
     const navigate = useNavigate();
     const inputRef = useRef(null);
+    const [searchParams] = useSearchParams();
+
+    // URL에서 검색어를 추출하여 상태 초기화
+    useEffect(() => {
+        const q = searchParams.get('q') || '';
+        setQuery(q);
+    }, [searchParams]);
 
     // 검색 실행 시 호출
     const handleSubmit = (e) => {
