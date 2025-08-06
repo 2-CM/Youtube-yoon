@@ -1,6 +1,5 @@
-import { Mic, Search } from 'lucide-react';
+import { Mic, Search, X } from 'lucide-react';
 
-import textInputAssistantImg from '../../assets/text-input-assistant.png';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
@@ -34,13 +33,9 @@ const HeaderSearchBar = () => {
                         placeholder="검색"
                     />
 
-                    {/* 텍스트 입력 보조 버튼 */}
-                    <button
-                        type="button"
-                        className="text-input-assistant-button p-1 ml-2"
-                        aria-label="텍스트 입력 보조 키보드"
-                    >
-                        <img src={textInputAssistantImg} draggable="false" alt="텍스트 입력 보조 키보드" />
+                    {/* 입력 초기화 버튼 */}
+                    <button type="button" className="clear-button" aria-label="입력 초기화 버튼">
+                        <X strokeWidth={1} width={30} height={30} />
                     </button>
 
                     {/* 검색 버튼 */}
