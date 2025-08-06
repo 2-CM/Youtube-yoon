@@ -35,7 +35,12 @@ const HeaderSearchBar = () => {
 
                     {/* 입력 초기화 버튼 */}
                     {query && (
-                        <button type="button" className="clear-button" aria-label="입력 초기화 버튼">
+                        <button
+                            type="button"
+                            className="clear-button"
+                            onClick={() => setQuery('')}
+                            aria-label="입력 초기화 버튼"
+                        >
                             <X strokeWidth={1} width={30} height={30} />
                         </button>
                     )}
