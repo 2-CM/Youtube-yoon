@@ -6,6 +6,7 @@ import { AuthProvider } from './context/AuthContext';
 import Header from './components/Header/Header';
 import Home from './pages/Home';
 import MyPage from './pages/MyPage';
+import SearchResult from './pages/SearchResult';
 import VideoDetail from './pages/VideoDetail';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                     <Route path="/" element={<Home />} />
                     <Route path="/video/:videoId" element={<VideoDetail />} />
                     <Route path="/mypage" element={<MyPage />} />
+                    <Route path="/search" element={<SearchResult />} />
                 </Routes>
             </div>
         </AuthProvider>

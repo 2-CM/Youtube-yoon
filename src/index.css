@@ -49,15 +49,19 @@
     }
 
     .search-input-container {
-        @apply flex flex-1 items-center h-10 bg-white border border-[#c6c6c6] rounded-[40px_0_0_40px] pl-4 pr-1 py-0 ml-10 shadow-[inset_0_1px_2px_#eee];
+        @apply relative flex flex-1 items-center h-10 bg-white border border-[#c6c6c6] rounded-[40px_0_0_40px] pl-4 pr-1 py-0 ml-10 shadow-[inset_0_1px_2px_#eee] dark:bg-[#121212] dark:border-[#303030] dark:shadow-none dark:focus-within:border-[#1c62b9];
     }
 
     .search-input-container:focus-within {
-        @apply border-r border-[#1c62b9] pl-14 ml-0 shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)];
+        @apply pl-14 ml-0 border-r border-[#1c62b9] shadow-[inset_0_1px_2px_rgba(0,0,0,0.3)];
+    }
+
+    .clear-button {
+        @apply p-1 ml-2 rounded-full hover:bg-black/10 active:bg-black/20 dark:hover:bg-white/20 dark:active:bg-white/30;
     }
 
     .search-button {
-        @apply flex items-center justify-center cursor-pointer h-10 w-16 bg-[#f8f8f8] border border-[#d3d3d3] rounded-[0_40px_40px_0] hover:bg-[#f0f0f0] hover:border-[#c6c6c6];
+        @apply flex items-center justify-center cursor-pointer h-10 w-16 absolute -right-16 bg-[#f8f8f8] border border-[#d3d3d3] rounded-[0_40px_40px_0] hover:bg-[#f0f0f0] hover:border-[#c6c6c6];
     }
 
     .tooltip {
@@ -90,6 +94,10 @@
 
     .login-button {
         @apply flex justify-center items-center h-9 w-24 border border-black/10 rounded-full text-sm text-[#065fd4] hover:bg-sky-100 hover:border-none active:bg-sky-700/20 dark:text-[#3ea6ff] dark:border-white/30 dark:hover:bg-white/20 dark:active:bg-white/25;
+    }
+
+    .error-message {
+        @apply flex justify-center mt-14 ml-[72px] w-full pt-52 text-xl;
     }
 }
 
