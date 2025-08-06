@@ -1,12 +1,13 @@
 import { Mic, Search, X } from 'lucide-react';
+import { useRef, useState } from 'react';
 
 import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 const HeaderSearchBar = () => {
     // 검색어 상태 관리
     const [query, setQuery] = useState('');
     const navigate = useNavigate();
+    const inputRef = useRef(null);
 
     // 검색 실행 시 호출
     const handleSubmit = (e) => {
@@ -26,6 +27,7 @@ const HeaderSearchBar = () => {
 
                     {/* 검색창 */}
                     <input
+                        ref={inputRef}
                         type="text"
                         value={query}
                         onChange={(e) => setQuery(e.target.value)}
@@ -38,7 +40,10 @@ const HeaderSearchBar = () => {
                         <button
                             type="button"
                             className="clear-button"
-                            onClick={() => setQuery('')}
+                            onClick={() => {
+                                setQuery('');
+                                inputRef.current?.focus(); // 검색창에 포커스
+                            }}
                             aria-label="입력 초기화 버튼"
                         >
                             <X strokeWidth={1} width={30} height={30} />
