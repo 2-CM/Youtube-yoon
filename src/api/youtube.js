@@ -31,7 +31,7 @@ const addChannelThumbnails = async (videos) => {
     }));
 };
 
-export const fetchPopularVideos = async () => {
+export const fetchPopularVideos = async (pageToken = '') => {
     try {
         // 인기 영상 목록 요청 (영상 정보 + 조회수)
         const videoRes = await axios.get('https://www.googleapis.com/youtube/v3/videos', {
@@ -40,13 +40,17 @@ export const fetchPopularVideos = async () => {
                 chart: 'mostPopular',
                 regionCode: 'KR',
                 maxResults: 50,
+                pageToken,
                 key: API_KEY,
             },
         });
 
         const videos = videoRes.data.items;
+        const nextPageToken = videoRes.data.nextPageToken || null; // 다음 페이지 토큰이 없으면 null
 
-        return await addChannelThumbnails(videos);
+        const videosWithThumbnails = await addChannelThumbnails(videos);
+
+        return { videos: videosWithThumbnails, nextPageToken };
     } catch (error) {
         console.error('인기 동영상 API 호출 실패:', error);
         throw error;
