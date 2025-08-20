@@ -74,6 +74,10 @@ export const fetchSearchResults = async (query, pageToken = '') => {
 
         const videos = searchRes.data.items;
         const nextPageToken = searchRes.data.nextPageToken || null;
+
+        // 검색 결과가 없으면 바로 반환 (불필요한 API 호출 방지)
+        if (!videos.length) return { videos: [], nextPageToken };
+
         // 검색 결과에서 videoId만 추출
         const videoIds = videos.map((v) => v.id.videoId).join(',');
 

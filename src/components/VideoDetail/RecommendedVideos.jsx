@@ -18,7 +18,9 @@ const RecommendedVideos = ({ videos, onCardClick }) => {
 
     return (
         <div className="recommended-videos">
-            {isMobile ? (
+            {videos.length === 0 ? (
+                <p className="flex justify-center py-10">연관된 동영상이 없습니다...</p>
+            ) : isMobile ? (
                 <div className="ml-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     {videos.map((video) => (
                         <VideoCard
