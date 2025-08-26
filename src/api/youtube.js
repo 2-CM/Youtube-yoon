@@ -39,7 +39,7 @@ export const fetchPopularVideos = async (pageToken = '') => {
                 part: 'snippet,statistics',
                 chart: 'mostPopular',
                 regionCode: 'KR',
-                maxResults: 50,
+                maxResults: 20,
                 pageToken,
                 key: API_KEY,
             },
