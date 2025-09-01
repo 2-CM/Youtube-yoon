@@ -15,14 +15,7 @@ const SearchResult = () => {
     return (
         <div className="flex">
             <SideBar />
-
-            {loading && videos.length === 0 ? (
-                // 검색어 입력 직후 첫 페이지 로딩 중일 때만 표시
-                // 나중에 Skeleton 컴포넌트로 대체
-                <p className="error-message">검색 중...</p>
-            ) : (
-                <VideoGrid videos={videos} loadMore={loadMore} loading={loading} nextPageToken={nextPageToken} />
-            )}
+            <VideoGrid videos={videos} loadMore={loadMore} loading={loading} nextPageToken={nextPageToken} />
         </div>
     );
 };

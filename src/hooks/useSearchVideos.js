@@ -6,7 +6,7 @@ import { transformVideo } from '../utils/transformVideoData';
 export function useSearchVideos(query) {
     const [videos, setVideos] = useState([]); // 검색 결과 영상 리스트 상태
     const [nextPageToken, setNextPageToken] = useState(null);
-    const [loading, setLoading] = useState(false); // 로딩 상태 (나중에 Skeleton UI 연동 예정)
+    const [loading, setLoading] = useState(false); // 로딩 상태
     const [error, setError] = useState(null);
 
     // 다음 페이지 데이터를 가져오는 함수
