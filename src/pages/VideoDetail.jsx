@@ -41,11 +41,7 @@ const VideoDetail = () => {
 
             {/* 추천 영상 */}
             <div className="w-full lg:w-[402px] lg:min-w-[300px] py-6 pr-6">
-                {loading ? (
-                    <div className="flex justify-center py-10">추천 영상을 불러오는 중...</div>
-                ) : (
-                    <RecommendedVideos videos={filteredVideos} onCardClick={handleVideoClick} />
-                )}
+                <RecommendedVideos videos={filteredVideos} onCardClick={handleVideoClick} loading={loading} />
             </div>
         </div>
     );
