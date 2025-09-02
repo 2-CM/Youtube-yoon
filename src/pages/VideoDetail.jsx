@@ -1,6 +1,8 @@
 import RecommendedVideos from '../components/VideoDetail/RecommendedVideos';
 import VideoInfo from '../components/VideoDetail/VideoInfo';
 import VideoPlayer from '../components/VideoDetail/VideoPlayer';
+import { addToWatchHistory } from '../utils/watchHistory';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSearchVideos } from '../hooks/useSearchVideos';
 import { useVideoNavigation } from '../hooks/useVideoNavigation';
@@ -14,6 +16,13 @@ const VideoDetail = () => {
     const { videos, error, loading } = useSearchVideos(video?.title || '');
 
     const filteredVideos = videos.filter((v) => v.videoId !== video.videoId);
+
+    // 시청 기록 저장
+    useEffect(() => {
+        if (video) {
+            addToWatchHistory(video);
+        }
+    }, [video]);
 
     if (!video) {
         return <div>영상 정보를 불러올 수 없습니다.</div>;

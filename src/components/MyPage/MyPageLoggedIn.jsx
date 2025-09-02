@@ -1,8 +1,16 @@
+import { useEffect, useState } from 'react';
+
 import { LogOut } from 'lucide-react';
 import VideoCard from '../VideoGrid/VideoCard';
-import mockVideoData from '../../data/mockVideoData';
+import { getWatchHistory } from '../../utils/watchHistory';
 
 const MyPageLoggedIn = ({ currentUser, onLogout }) => {
+    const [history, setHistory] = useState([]);
+
+    useEffect(() => {
+        setHistory(getWatchHistory());
+    }, []);
+
     return (
         <>
             <div className="mypage-profile [width:calc(100%-48px)] flex m-auto">
@@ -29,18 +37,24 @@ const MyPageLoggedIn = ({ currentUser, onLogout }) => {
                     <div className="ml-2 mb-4">
                         <span className="text-xl font-bold">기록</span>
                     </div>
-                    <div className="flex justify-center gap-x-4 mx-2">
-                        {mockVideoData.slice(0, 4).map((video) => (
-                            <div key={video.videoId} className="w-[calc(25%-16.01px)]">
-                                <VideoCard
-                                    videoId={video.videoId}
-                                    username={video.username}
-                                    title={video.title}
-                                    views={video.views}
-                                    uploadedAt={video.uploadedAt}
-                                />
-                            </div>
-                        ))}
+                    <div className={history.length > 0 ? 'grid grid-cols-4 gap-4 mx-2' : 'flex justify-center mx-2'}>
+                        {history.length > 0 ? (
+                            history
+                                .slice(0, 20)
+                                .map((video) => (
+                                    <VideoCard
+                                        videoId={video.videoId}
+                                        username={video.username}
+                                        title={video.title}
+                                        views={video.views}
+                                        uploadedAt={video.uploadedAt}
+                                        thumbnailUrl={video.thumbnailUrl}
+                                        channelThumbnail={video.channelThumbnail}
+                                    />
+                                ))
+                        ) : (
+                            <span className="text-gray-500">시청 기록이 없습니다.</span>
+                        )}
                     </div>
                 </div>
             </div>
