@@ -21,6 +21,7 @@ const VideoDetail = () => {
     useEffect(() => {
         if (video) {
             addToWatchHistory(video);
+            window.scrollTo(0, 0); // 상세 페이지로 이동 시 스크롤 맨 위로
         }
     }, [video]);
 
