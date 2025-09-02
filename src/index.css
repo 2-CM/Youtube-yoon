@@ -99,6 +99,10 @@
     .error-message {
         @apply flex justify-center mt-14 ml-[72px] w-full pt-52 text-xl;
     }
+
+    .button-interactive {
+        @apply hover:bg-black/10 active:bg-black/20 border-black/10 dark:hover:bg-white/20 dark:active:bg-white/25 dark:border-white/20;
+    }
 }
 
 /* 특수한 유틸리티 클래스 정의 */

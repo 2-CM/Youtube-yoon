@@ -1,8 +1,8 @@
+import { clearWatchHistory, getWatchHistory } from '../../utils/watchHistory';
 import { useEffect, useState } from 'react';
 
 import { LogOut } from 'lucide-react';
 import VideoCard from '../VideoGrid/VideoCard';
-import { getWatchHistory } from '../../utils/watchHistory';
 
 const MyPageLoggedIn = ({ currentUser, onLogout }) => {
     const [history, setHistory] = useState([]);
@@ -10,6 +10,11 @@ const MyPageLoggedIn = ({ currentUser, onLogout }) => {
     useEffect(() => {
         setHistory(getWatchHistory());
     }, []);
+
+    const handleClearHistory = () => {
+        clearWatchHistory();
+        setHistory([]); // UI에 바로 반영되도록 state 비우기
+    };
 
     return (
         <>
@@ -34,8 +39,14 @@ const MyPageLoggedIn = ({ currentUser, onLogout }) => {
 
             <div className="pt-6 mx-6">
                 <div className="mb-12">
-                    <div className="ml-2 mb-4">
+                    <div className="mx-2 mb-4 flex justify-between items-center">
                         <span className="text-xl font-bold">기록</span>
+                        <button
+                            onClick={handleClearHistory}
+                            className="border rounded-3xl px-4 py-2 text-sm font-medium button-interactive"
+                        >
+                            기록 삭제
+                        </button>
                     </div>
                     <div className={history.length > 0 ? 'grid grid-cols-4 gap-4 mx-2' : 'flex justify-center mx-2'}>
                         {history.length > 0 ? (
