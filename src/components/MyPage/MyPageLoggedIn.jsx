@@ -6,15 +6,21 @@ import VideoCard from '../VideoGrid/VideoCard';
 
 const MyPageLoggedIn = ({ currentUser, onLogout }) => {
     const [history, setHistory] = useState([]);
+    const [historyLoading, setHistoryLoading] = useState(true); // 시청 기록 로딩 상태
 
     useEffect(() => {
         setHistory(getWatchHistory());
+        setHistoryLoading(false); // 기록 로딩 완료
     }, []);
 
     const handleClearHistory = () => {
         clearWatchHistory();
         setHistory([]); // UI에 바로 반영되도록 state 비우기
     };
+
+    if (historyLoading) {
+        return <div></div>; // 시청 기록 로딩 중
+    }
 
     return (
         <>

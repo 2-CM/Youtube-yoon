@@ -11,6 +11,7 @@ export const AuthContext = createContext();
 // Context Provider 컴포넌트 정의
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
+    const [loading, setLoading] = useState(true); // 로딩 상태 추가
 
     // Firebase 로그인 상태 변화 감지, 컴포넌트가 마운트될 때 딱 한 번 실행
     useEffect(() => {
@@ -18,6 +19,7 @@ export const AuthProvider = ({ children }) => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             // 로그인 상태 감시 시작
             setCurrentUser(user); // 로그인, 로그아웃 시에 실행됨
+            setLoading(false); // 로그인 상태 확인 완료
         });
 
         // 컴포넌트가 사라질 때(언마운트) 리스너 정리 (메모리 누수 방지)
@@ -29,6 +31,6 @@ export const AuthProvider = ({ children }) => {
         // 하위 컴포넌트에 currentUser 공유
         // AuthContext.Provider 안에 있는 컴포넌트들은 currentUser를 쓸 수 있음
         // children -> React 컴포넌트의 중간에 들어가는 자식 컴포넌트들
-        <AuthContext.Provider value={{ currentUser }}>{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{ currentUser, loading }}>{children}</AuthContext.Provider>
     );
 };

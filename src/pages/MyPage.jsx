@@ -6,7 +6,7 @@ import SideBar from '../components/SideBar/SideBar';
 import { useAuthContext } from '../hooks/useAuthContext';
 
 const MyPage = () => {
-    const { currentUser } = useAuthContext(); // 로그인 상태 확인
+    const { currentUser, loading } = useAuthContext(); // 로그인 상태 확인
 
     const handleLogin = async () => {
         try {
@@ -23,6 +23,8 @@ const MyPage = () => {
             console.error('로그아웃 실패', error);
         }
     };
+
+    if (loading) return <div className="error-message">Loading...</div>; // 로딩 중일 때 화면
 
     return (
         <>
